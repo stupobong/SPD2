@@ -1,0 +1,36 @@
+- update user password in user management admin
+- registrar profile_pic
+- update profile in registrar
+- remove send email from registrar
+- order the list of submission for default registered prospect by date of application
+- Clarify business process of enrollment from prospect list to enroll into exam and as student user (Inform Julong too)
+
+- change button "Add" to "Update" by routing to update
+- http://192.168.1.2:8000/create_student_user/ - remove upload button
+- http://192.168.1.2:8000/enroll_nstudent/ - create all demo data
+
+- Go with the flow with no interruption of topics
+- http://192.168.1.2:8000/view_nstudent/%3FP16/ - remove add button
+- Open date for registration for academic year for to direct into filling information
+- (create a table for academic_year table) (create a column for academic years- opening, closing, academic_year)
+- http://192.168.1.2:8000/xstudent_view/ - add button for enroll
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Done - update user password in user management admin
+Done - registrar profile_pic
+Done - update profile in registrar
+Done - remove send email from registrar
+Done - order the list of submission for default registered prospect by date of application
+- Clarify business process of enrollment from prospect list to enroll into exam and as student user (Inform Julong too)
+
+Done - change button "Add" to "Update" by routing to update
+Done - http://192.168.1.2:8000/create_student_user/ - remove upload button
+Done - http://192.168.1.2:8000/enroll_nstudent/ - create all demo data
+
+- Go with the flow with no interruption of topics
+Done - http://192.168.1.2:8000/view_nstudent/%3FP16/ - remove add button
+Done - Open date for registration for academic year for to direct into filling information
+Done - (create a table for academic_year table) (create a column for academic years- opening, closing, academic_year)
+Done - http://192.168.1.2:8000/xstudent_view/ - add button for enroll
+Done - academic year (open-close re-application for existing student, open-close registration for new student, )

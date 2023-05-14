@@ -1,0 +1,46 @@
+.container{
+    display: block;
+    width: 900px;
+    background-color: #ffff;
+    border-radius: 10px;
+    padding: 20px 30px 0 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.container ul{
+    display: block;
+    list-style: none;
+    width: 30%;
+}
+.container ul .item{
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 30px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.item + .item{
+    margin-top: 15px;
+}
+.item.active{
+    display: block;
+    background-color: var(--button_bg);
+    color: #ffff;
+    box-shadow: var(--box_shadow);
+}
+.tab_container{
+    display: block;
+    padding-left: 50px;
+    box-sizing: border-box;
+    width: 70%;
+
+}
+
+.tab_container .tab_item{
+    display: none;
+}
+.tab_container .tab_item.active{
+    display: block;
+}

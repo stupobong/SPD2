@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>CASAM</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'picture/logo.png' %}">
+
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body class="app sidebar-mini rtl">
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="#">CASAM</a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+     
+      <!--Notification Menu-->
+      
+      <!-- User Menu-->
+      <p style="color: white; font-weight: bold;">Welcome to CASAM! </p>
+      
+
+      </li>
+    </ul>
+  </header>
+  <!-- Sidebar menu-->
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    {% load static %}
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="{{request.user.staff.profile_pic.url}}" alt="User Image" style="width: 37px; height: auto;">
+      <div>
+        <p class="app-sidebar__user-name" style="margin-top: 0;">{{request.user.first_name}} {{request.user.last_name}}</p>
+        <p class="app-sidebar__user-designation" style="margin-top: 0;">{{request.user.username}}</p>
+      </div>
+    </div>
+    <div class="sidebar">
+    <ul class="app-menu">
+      <li>
+        <li>
+            <a class="app-menu__item " href=""><i class="app-menu__icon fa fa-envelope"></i><span class="app-menu__label">Messages</span></a>
+        </li>
+        <li>
+            <a class="app-menu__item " href=""><i class="app-menu__icon fa fa-tachometer"></i><span class="app-menu__label">Dashboard</span></a>
+        </li>
+        <li>
+            <a class="app-menu__item active" href="{% url 'admin_menu' %}"><i class="app-menu__icon fa fa-bars"></i><span class="app-menu__label">Menu</span></a>
+        </li>
+        <li>
+            <a class="app-menu__item " href=""><i class="app-menu__icon fa fa-money"></i><span class="app-menu__label">Online Payment</span></a>
+        </li>
+        
+        <li>
+            <a class="app-menu__item " href="#"><i class="app-menu__icon fa fa-graduation-cap"></i><span class="app-menu__label">FACTS</span></a>
+        </li>
+        <li>
+            <a class="app-menu__item " href="#"><i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">Library</span></a>
+        </li>
+        <li>
+            <a class="app-menu__item " href="#"><i class="app-menu__icon fa fa-address-card"></i><span class="app-menu__label">CAIS Website</span></a>
+        </li>                
+    </div>
+  </aside>
+        <main class="app-content">
+            <div class="app-title">
+                <div>
+                    <h1><i class="fa fa-users"></i>User Management</h1>
+                    <div class="row">
+                        <h1 style="font-size: 15px; margin-left: 10%;"><i>/Student</i></h1>
+                    </div>
+
+                </div>
+            </div>
+            
+            
+            <option value="">---------</option>
+            {% for state in states %}
+            <option value="{{ state.pk }}">{{ state.name }}</option>
+            {% endfor %}
+            </div>
+ 
+    
+</main>
+{% load static %}
+<!-- Essential javascripts for application to work-->
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<!-- The javascript plugin to display page loading on top-->
+<script src="{% static 'js/plugins/pace.min.js' %}"></script>
+<!-- Page specific javascripts-->
+<!-- Data table plugin-->
+<script type="text/javascript" src="{% static 'js/plugins/jquery.dataTables.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/plugins/dataTables.bootstrap.min.js' %}"></script>
+<script type="text/javascript">$('#sampleTable').DataTable();</script>
+<!-- Google analytics script-->
+<script type="text/javascript">
+    if(document.location.hostname == 'pratikborsadiya.in') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-72504830-1', 'auto');
+        ga('send', 'pageview');
+    }
+</script>
+{% if messages %}
+  <script>
+      {% for message in messages %}
+          swal("{{message}}", " ", "success")
+      {% endfor %}
+  </script>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+Done - the prospect
+Done - the title (from CASAM to ACAS = Administrator of CAIS Academic System)
+Done - the login use case
+- clarify the class and terminology of database
+Done - the form of enrollment should be clearer and uploaded
+Done - hardware sustainability should be evaluated/aligned correctly
+Pending - seperated the hardware/software for security
+Pending - VMware/Hypervisor
+Pending - evaluate between linux/windows server
+Not Yet - the knowledge database for how-to-guide video
+Done - the domain for the system
+Done - the authentication of the system
+None - the script to handle mailing system
+

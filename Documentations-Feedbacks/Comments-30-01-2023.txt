@@ -1,0 +1,17 @@
+- Give proper to prospect students who apply for registration
+- Change title from CASAM to ACAS (Administration of Cais Academic System)
+- Modify User Case on Login
+- Clarify "Class" to "Assign_Class"
+- Update the purposes and objective of ACAS
+- Re-evaluate on the Hardware, Server, Security, Backups, Virtualization and Cloud Community
+- Feasible Study to Feasibility Study
+- Work on the Front-End features and Back-End capability (Stack Cloud, Cloud Storage and its provider)
+- Get familiar with Cost-Estimation (~ $4,000 per capital build)
+- Add both old and new registration form onto the documentation
+- Build a knowledge-based "How-To" Video guides for both client, users and users
+- Consider webpage migration onto the domain network, security consideration upon any possible attacks
+- Script to handle email and data transaction of django framework
+
+
+- if condition (fail-score) (dependent age-date_of_birth)
+- documentation

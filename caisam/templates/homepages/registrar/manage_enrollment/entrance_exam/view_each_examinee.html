@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>CASAM</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'picture/logo.png' %}">
+
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body class="app sidebar-mini rtl">
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="#">CASAM</a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+     
+      <!--Notification Menu-->
+      
+      <!-- User Menu-->
+      <p style="color: white; font-weight: bold;">Welcome to CASAM! </p>
+      
+
+      </li>
+    </ul>
+  </header>
+  <!-- Sidebar menu-->
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    {% load static %}
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="{{request.user.staff.profile_pic.url}}" alt="User Image" style="width: 37px; height: auto;">
+      <div>
+        <p class="app-sidebar__user-name" style="margin-top: 0;">{{request.user.first_name}} {{request.user.last_name}}</p>
+        <p class="app-sidebar__user-designation" style="margin-top: 0;">{{request.user.username}}</p>
+      </div>
+    </div>
+    <div class="sidebar">
+        <<ul class="app-menu">
+            <li>
+                <li>
+                    <a class="app-menu__item active" href="{% url 'admin_menu' %}"><i class="app-menu__icon fa fa-bars"></i><span class="app-menu__label">Menu</span></a>
+                </li>
+                <li>
+                    <a class="app-menu__item " href="https://factsmgt.com/"><i class="app-menu__icon fa fa-graduation-cap"></i><span class="app-menu__label">CAIS FACTS</span></a>
+                </li>
+                <li>
+                    <a class="app-menu__item " href="https://acas.wikibodia.com/"><i class="app-menu__icon fa fa-book"></i><span class="app-menu__label">CAIS LMS</span></a>
+                </li>
+                <li>
+                    <a class="app-menu__item " href="https://www.caisedu.com/"><i class="app-menu__icon fa fa-address-card"></i><span class="app-menu__label">CAIS Website</span></a>
+                </li>
+            </li>                
+    </div>
+  </aside>
+        <main class="app-content">
+            <div class="app-title">
+                <div>
+                    <h1><i class="fa fa-users"></i>Registree Management</h1>
+                    <div class="row">
+                        <h1 style="font-size: 15px; margin-left: 10%;"><i>/View Each Examinee</i></h1>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="part-1">
+                    <div class="title-1">
+                        <h2 class="title"> Examinee Information </h2>
+                    </div>
+                        <div class="column">
+                            <div class="tile">
+                                <div class="profile-1" style="margin-left: 5%; margin-top: 30px;">
+                                    <div class="profile-title-1">
+                                        <h2 class="title"> Profile </h2>
+                                    </div>
+                                    <div>
+                                        <img src="{{enroll_xview.prospect_name.profile_pic.url}}" alt="" style="width: 35%; height: 40%;">
+                                    </div>
+                                    <table class="table table-hover" id="sampleTable">
+                                        <tbody>
+                                            <tr>
+                                                <th>Prospect </th>
+                                                <th>Information </th>
+                                                <th>Parent </th>
+                                                <th>Information </th>
+                                            </tr>
+                                            <tr>
+                                                <td>Name:</td>
+                                                <td>{{enroll_xview.prospect_name.first_name}} {{enroll_xview.enroll_xview.prospect.last_name}}</td>
+                                                <td>Parent's Name:</td>
+                                                <td>{{enroll_xview.prospect_name.parent_name}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gender:</td>
+                                                <td>{{enroll_xview.prospect_name.gender}}</td>
+                                                <td>Parent Occupation/Job:</td>
+                                                <td>{{enroll_xview.prospect_name.parent_occupation}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Age:</td>
+                                                <td>{{enroll_xview.prospect_name.age}}</td>
+                                                <td>Parent's Email:</td>
+                                                <td>{{enroll_xview.prospect_name.parent_email}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date of Birth:</td>
+                                                <td>{{enroll_xview.prospect_name.DoB}}</td>
+                                                <td>Parent's Contact:</td>
+                                                <td>{{enroll_xview.prospect_name.parent_contact}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Birth Address:</td>
+                                                <td>{{enroll_xview.prospect_name.birth_address}}</td>
+                                                <td>Name of Emergency Contact:</td>
+                                                <td>{{enroll_xview.prospect_name.emergency_cont_name}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nationality:</td>
+                                                <td>{{enroll_xview.prospect_name.nationality}}</td>
+                                                <td>Emergency Contact:</td>
+                                                <td>{{enroll_xview.prospect_name.emergency_contact}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Religion:</td>
+                                                <td>{{enroll_xview.prospect_name.religion}}</td>
+                                                <td>Emergency Address:</td>
+                                                <td>{{enroll_xview.prospect_name.emergency_address}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Grade Level:</td>
+                                                <td>{{enroll_xview.prospect_name.apply_grade_level}}</td>
+                                                <td>Home Address:</td>
+                                                <td>{{enroll_xview.prospect_name.address}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Academic Year:</td>
+                                                <td>{{enroll_xview.prospect_name.academic_year}}</td>
+                                                <td>City:</td>
+                                                <td>{{enroll_xview.prospect_name.city}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Helath Record:</td>
+                                                <td>{{enroll_xview.prospect_name.health_record}}</td>
+                                                <td>Country of Resident:</td>
+                                                <td>{{enroll_xview.prospect_name.country}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Physical Checkup:</td>
+                                                <td>{{enroll_xview.prospect_name.physical_checkup}}</td>
+                                                <td>Date Joined:</td>
+                                                <td>{{enroll_xview.prospect_name.date_added}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Vaccination:</td>
+                                                <td>{{enroll_xview.prospect_name.vaccinated}}</td>
+                                            </tr>
+                                        </tbody> 
+                                    </table>
+                                    <table class="table table-hover" id="sampleTable">
+                                        <tbody>
+                                            <tr>
+                                                <th>Subject </th>
+                                                <th>Information </th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <td>Class Name:</td>
+                                                <td>{{enroll_xview.classroom.class_name}}</td>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <td>Time Schedule:</td>
+                                                <td>{{enroll_xview.classroom.time_schedule}}</td>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <td>Class Building:</td>
+                                                <td>{{enroll_xview.classroom.class_building}}</td>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            <tr>
+                                                <td>Date Exam:</td>
+                                                <td>{{enroll_xview.classroom.date_exam}}</td>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </tbody>
+                                        
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </main>
+
+{% load static %}
+<!-- Essential javascripts for application to work-->
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<!-- The javascript plugin to display page loading on top-->
+<script src="{% static 'js/plugins/pace.min.js' %}"></script>
+<!-- Page specific javascripts-->
+<!-- Data table plugin-->
+<script type="text/javascript" src="{% static 'js/plugins/jquery.dataTables.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/plugins/dataTables.bootstrap.min.js' %}"></script>
+<script type="text/javascript">$('#sampleTable').DataTable();</script>
+<!-- Google analytics script-->
+<script type="text/javascript">
+    if(document.location.hostname == 'pratikborsadiya.in') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-72504830-1', 'auto');
+        ga('send', 'pageview');
+    }
+</script>
+{% if messages %}
+  <script>
+      {% for message in messages %}
+          swal("{{message}}", " ", "success")
+      {% endfor %}
+  </script>
+{% endif %}
+</body>
+</html>
