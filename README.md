@@ -17,3 +17,5 @@ With Debian already running, I first
 #These are how I get it all started
 
 #Then come the advance part, we need some time to work between the running debian server and my currently Windows 10, so witht the help of Visual Studio Code Host connection i was able to connect using IP address, ports, and user admin/password for this connection to happen.
+
+MORE UPDATES are COMING!
